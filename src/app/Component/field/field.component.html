@@ -1,0 +1,10 @@
+<div class="fieldwrapper" [style.width.px]="fieldWidth">
+    <div class="fieldHeader">
+        <span class="fieldHeader-item" *ngFor="let h of columnHeader" [style.width.px]="cellWidth">{{h}}</span>
+    </div>
+    <div class="rowHeader">
+        <span class="fieldHeader-row" *ngFor="let h of rowHeader" [style.height.px]="cellWidth" [style.lineHeight.px]="cellWidth">{{h}}</span>
+    </div>
+    
+    <cell *ngFor="let c of Cells" [Coordinates]="c" (clickCell)="clickCell($event)"></cell>
+</div>
